@@ -1,5 +1,6 @@
 # Analysis of Algorithm
-   *The theoretical study of computer program **performance** and resource usage*
+
+*The theoretical study of computer program **performance** and resource usage*
 
 ## What's more important than performance ?
    Correctibility, feature, robustin etc...
@@ -13,7 +14,8 @@
    *Such that: A1 < A2 < ... < An*
 
 ### Insertion sort
-   *pesudocode*  
+
+*pesudocode*  
 <pre>
 Insertion_Sort(A, n) //Sorts A[1..n]
     for j <- 2 to n
