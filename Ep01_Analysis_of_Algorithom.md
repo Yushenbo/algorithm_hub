@@ -25,10 +25,10 @@ Insertion_Sort(A, n) //Sorts A[1..n]
     for j <- 2 to n
         do key <- A[j]
             i <- (j-1)
-            while i > 0 and A[i] > key
-                do A[i + 1] <- A[i]
+            while i >= 0 and A[i] >= key
+                do A[i + 1] <-> A[i]
                     i <- (i - 1)
-            A[i + 1] <- Key
+                    key = A[i+1]
 </pre>
 
 #### Ex: Array [8 2 4 9 3 6], re-arrange with increasing sortion
@@ -176,8 +176,8 @@ def insertion_sort(p_array):
         i = j - 1
         while(i > 0 && p_array[i] > key):
             p_array[i+1], p_array[i] = p_array[i], p_array[i+1]
-            i--
-        p_array[i+1] = key
+            i = i - 1
+            key = p_array[i + 1]
     return p_array
 
 print(insertion_sort(array_num))
@@ -198,10 +198,10 @@ $T(n) =$ Max time On any inputs of size n
 
 *Avarage case*  
 $T(n) =$ Expected time over all inputs of size n  
-   Nedd assumption of statistical distribution of inputs
+- Nedd assumption of statistical distribution of inputs
 
 *Best case* (Bogus)
-   All eles sorted already
+- All eles sorted already
 
 ### What is insertion sorts worst-case time
 
