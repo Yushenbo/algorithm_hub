@@ -2,19 +2,19 @@
 
 *The theoretical study of computer program **performance** and resource usage*
 
-## What's more important than performance ?
+## What's more important than performance
 
    Correctibility, feature, robustin etc...
 
-## Why study algorithms and performance ?
+## Why study algorithms and performance
 
    ~~Opening question, No anwser~~
 
 ## Problem: Sorting
 
-   Input: sequance < a1, a2 ..., an> of numbers  
-   Ouput: permutation of those < A1, A2 ..., An > numbers  
-   *Such that: A1 < A2 < ... < An*
+Input: sequance < a1, a2 ..., an> of numbers  
+Ouput: permutation of those < A1, A2 ..., An > numbers  
+*Such that: A1 < A2 < ... < An*
 
 ### Insertion sort
 
@@ -33,9 +33,10 @@ Insertion_Sort(A, n) //Sorts A[1..n]
 
 #### Ex: Array [8 2 4 9 3 6], re-arrange with increasing sortion
 
-##### Analysis:  
+##### Analysis  
 
-   Step 1.
+- Step 1.
+
 ```mermaid
 graph LR;
     8-->2
@@ -44,7 +45,9 @@ graph LR;
     9-->3
     3-->6
 ```
-   Step 2.
+
+- Step 2.
+
 ```mermaid
 graph LR;
     8-->2
@@ -54,7 +57,9 @@ graph LR;
     9-->3
     3-->6
 ```
-   Step 3.
+
+- Step 3.
+
 ```mermaid
 graph LR;
     2-->8
@@ -64,7 +69,9 @@ graph LR;
     9-->3
     3-->6
 ```
-   Step 4.
+
+- Step 4.
+
 ```mermaid
 graph LR;
     2-->4
@@ -73,7 +80,9 @@ graph LR;
     9-->3
     3-->6
 ```
-   Step 5.
+
+- Step 5.
+
 ```mermaid
 graph LR;
     2-->4
@@ -83,7 +92,9 @@ graph LR;
     3-->9
     3-->6
 ```
-   Step 6.
+
+- Step 6.
+
 ```mermaid
 graph LR;
     2-->4
@@ -93,7 +104,9 @@ graph LR;
     3-->9
     9-->6
 ```
-   Step 7.
+
+- Step 7.
+
 ```mermaid
 graph LR;
     2-->4
@@ -103,7 +116,9 @@ graph LR;
     8-->9
     9-->6
 ```
-   Step 8.
+
+- Step 8.
+
 ```mermaid
 graph LR;
     2-->3
@@ -112,7 +127,9 @@ graph LR;
     8-->9
     9-->6
 ```
-   Step 9.
+
+- Step 9.
+
 ```mermaid
 graph LR;
     2-->3
@@ -122,7 +139,9 @@ graph LR;
     9-->6
     6-->9
 ```
-   Step 10.
+
+- Step 10.
+
 ```mermaid
 graph LR;
     2-->3
@@ -132,7 +151,9 @@ graph LR;
     6-->8
     6-->9
 ```
-   Step 11.
+
+- Step 11.
+
 ```mermaid
 graph LR;
     2-->3
@@ -141,9 +162,12 @@ graph LR;
     6-->8
     8-->9
 ```
-***Run command***  
-`python insertion_sort.py`  
-***Source Code***  
+
+- ***Run command***  
+`python insertion_sort.py`
+
+- ***Source Code***
+
 <pre name="code" class="python3">
 array_num = [8, 2, 4, 9, 3, 6]
 def insertion_sort(p_array):
@@ -159,7 +183,7 @@ def insertion_sort(p_array):
 print(insertion_sort(array_num))
  </pre>
 
- #### Runing time 
+#### Runing time
 
 - Depends on input(eg. already sorted some part)  
 - Depends on input size, elements size:
@@ -167,7 +191,7 @@ $6\times10^9$ Vs  $6$, (parameterize input size)
 - Upper bounds of the running time
    Gurantee to the user
 
-### Kinds of alnalysis:
+### Kinds of alnalysis
 
 *worst case*  
 $T(n) =$ Max time On any inputs of size n  
@@ -184,7 +208,7 @@ $T(n) =$ Expected time over all inputs of size n
 Depends on the computer running on  
 
 - relative speed(On same machine)  
-- absolute speed(On diff machine) 
+- absolute speed(On diff machine)
 
 ### IDEA
 
@@ -196,7 +220,6 @@ Depends on the computer running on
 - $\Theta$ Notation: Drop low order terms and ignore leading constants  
   - Ex: $3n^3 + 90n^2 - 5n + 6046 = \Theta(n^3)$
     - As $n\rightarrow \infty$, $\Theta(n^2) << \Theta(n^3)$
-
 
 ## Insetion sort analysis
 
