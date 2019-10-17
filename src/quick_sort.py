@@ -6,7 +6,7 @@ def quick_sort(array):
     if len(array) < 2:
         return array
 
-    pvoit = array[random.randint(0, len(array)-1)]
+    pvoit = array[0]
     #pvoit = array.pop(0)
     print("pvoit: ", pvoit)
     less_than_pvoit = [x for x in array[1:] if x <= pvoit]
