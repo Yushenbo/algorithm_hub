@@ -198,9 +198,11 @@ $T(n) =$ Max time On any inputs of size n
 
 *Avarage case*  
 $T(n) =$ Expected time over all inputs of size n  
+
 - Nedd assumption of statistical distribution of inputs
 
 *Best case* (Bogus)
+
 - All eles sorted already
 
 ### What is insertion sorts worst-case time
