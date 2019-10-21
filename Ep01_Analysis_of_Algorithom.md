@@ -164,6 +164,7 @@ graph LR;
 ```
 
 - ***Run command***  
+
 ```sh
 python insertion_sort.py
 ```
@@ -307,7 +308,6 @@ graph LR;
 
     - Recrusion tree, $T(n) = 2T(n/2) + cn$, $c>0$
     - test
-
 
 - ***source code***
 
