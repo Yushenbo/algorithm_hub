@@ -20,7 +20,7 @@ Ouput: permutation of those < A1, A2 ..., An > numbers
 
 - *Pesudocode*
 
-<pre>
+```pesudocode
 Insertion_Sort(A, n) //Sorts A[1..n]
     for j <- 2 to n
         do key <- A[j]
@@ -29,7 +29,7 @@ Insertion_Sort(A, n) //Sorts A[1..n]
                 do A[i + 1] <-> A[i]
                     i <- (i - 1)
                     key = A[i+1]
-</pre>
+```
 
 #### Ex: Array [8 2 4 9 3 6], re-arrange with increasing sortion
 
@@ -164,11 +164,13 @@ graph LR;
 ```
 
 - ***Run command***  
-`python insertion_sort.py`
+```sh
+python insertion_sort.py
+```
 
 - ***Source Code***
 
-<pre name="code" class="python3">
+```python
 array_num = [8, 2, 4, 9, 3, 6]
 def insertion_sort(p_array):
     for j in range(1, len(p_array) - 1):
@@ -181,7 +183,7 @@ def insertion_sort(p_array):
     return p_array
 
 print(insertion_sort(array_num))
- </pre>
+```
 
 #### Runing time
 
@@ -223,10 +225,118 @@ Depends on the computer running on
   - Ex: $3n^3 + 90n^2 - 5n + 6046 = \Theta(n^3)$
     - As $n\rightarrow \infty$, $\Theta(n^2) << \Theta(n^3)$
 
-## Insetion sort analysis
+#### Insetion sort analysis
 
 - Worst case: input reverse sorted
   - $T(n) = \sum^{n}_{i = 1} \Theta(j) = \Theta(n^2)$(Arithmetic series)
 - Is insertion sort fast
   - moderately fast for small n
   - Not at all for large n
+
+### Merge sort
+
+Merge sort A[1..n]
+
+- ***pesudocode***
+
+```pesudocode
+1. If n = 1, done // Time = O(1)
+2. Recursively sort
+    A[1...[n/2]] and
+    A[[n/2]+1..n]
+3. Merge 2 sorted lists
+```
+
+- Analysis Key subroutine Merge
+
+```mermaid
+graph LR;
+    2-->7-->13-->20
+    1-->9-->11-->12
+```
+
+```mermaid
+graph LR;
+    2-->7-->13-->20
+    9-->11-->12
+    1
+```
+
+```mermaid
+graph LR;
+    7-->13-->20
+    9-->11-->12
+    1-->2
+```
+
+```mermaid
+graph LR;
+    13-->20
+    9-->11-->12
+    1-->2-->7
+```
+
+```mermaid
+graph LR;
+    13-->20
+    11-->12
+    1-->2-->7-->9
+```
+
+```mermaid
+graph LR;
+    13-->20
+    12
+    1-->2-->7-->9-->11
+```
+
+```mermaid
+graph LR;
+    13-->20
+    1-->2-->7-->9-->11-->12
+```
+
+```mermaid
+graph LR;
+    1-->2-->7-->9-->11-->12-->13-->20
+```
+
+- Running time
+  - $TimeMerge(n) = \Theta(n)$ on n total elements
+  - $TimeRecur=\begin{cases}\Theta(1) &n = 1\\2\Theta(n/2) + \Theta(n) &n > 1\end{cases}$
+
+    - Recrusion tree, $T(n) = 2T(n/2) + cn$, $c>0$
+    - test
+
+
+- ***source code***
+
+```python
+Array = [6, 5, 3, 1, 8, 7, 2, 4]
+
+def merge(left, right):
+    result = []
+    while len(left) > 0 and len(right) > 0 :
+        if left[0] < right[0]:
+            result.append(left.pop(0))
+        else:
+            result.append(right.pop(0))
+    result += left
+    result += right
+    print("result is:", result)
+    return result
+
+
+def merge_sort(arry):
+    if len(arry) == 1:
+        return arry
+    center = len(arry) // 2
+    left = arry[:center]
+    right = arry[center:]
+    l1 = merge_sort(left)
+    r1 = merge_sort(right)
+
+    return merge(l1, r1)
+
+print(merge_sort(Array))
+```
