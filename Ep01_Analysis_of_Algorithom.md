@@ -183,21 +183,20 @@ print(insertion_sort(array_num))
 
 - Runing time
 
-- Depends on input(eg. already sorted some part)  
-- Depends on input size, elements size:
-$6\times10^9$ Vs  $6$, (parameterize input size)  
-- Upper bounds of the running time
-   Gurantee to the user
+  - Depends on input(eg. already sorted some part)  
+  - Depends on input size, elements size:$6\times10^9$ Vs  $6$, (parameterize input size)  
+  - Upper bounds of the running time Gurantee to the user
 
 ### Kinds of alnalysis
 
-*worst case*  
-$T(n) =$ Max time On any inputs of size n  
+- *worst case*  
 
-*Avarage case*  
-$T(n) =$ Expected time over all inputs of size n  
+  - $T(n) =$ Max time On any inputs of size n  
 
-- Nedd assumption of statistical distribution of inputs
+- *Avarage case*  
+
+  - $T(n) =$ Expected time over all inputs of size n  
+  - Nedd assumption of statistical distribution of inputs
 
 *Best case* (Bogus)
 
@@ -205,10 +204,10 @@ $T(n) =$ Expected time over all inputs of size n
 
 ### What is insertion sorts worst-case time
 
-Depends on the computer running on  
+- Depends on the computer running on  
 
-- relative speed(On same machine)  
-- absolute speed(On diff machine)
+  - relative speed(On same machine)  
+  - absolute speed(On diff machine)
 
 ### IDEA
 
