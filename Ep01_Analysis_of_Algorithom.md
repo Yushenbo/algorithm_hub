@@ -1,6 +1,8 @@
 # Analysis of Algorithm
 
-*The theoretical study of computer program **performance** and resource usage*
+[Opencaurse video address](https://www.bilibili.com/video/av9406674 "01 Introduction and Algorithm analysis")
+
+*The theoretical study of computer program **performance** and ***resource usage****
 
 ## What's more important than performance
 
@@ -12,9 +14,9 @@
 
 ## Problem: Sorting
 
-Input: sequance < a1, a2 ..., an> of numbers  
-Ouput: permutation of those < A1, A2 ..., An > numbers  
-*Such that: A1 < A2 < ... < An*
+- Input: sequance < a1, a2 ..., an> of numbers  
+- Ouput: permutation of those < A1, A2 ..., An > numbers  
+- *Such that: A1 < A2 < ... < An*
 
 ### Insertion sort
 
@@ -31,11 +33,10 @@ Insertion_Sort(A, n) //Sorts A[1..n]
                     key = A[i+1]
 ```
 
-#### Ex: Array [8 2 4 9 3 6], re-arrange with increasing sortion
+- Ex: Array [8 2 4 9 3 6], re-arrange with increasing sortion
 
-##### Analysis  
-
-- Step 1.
+- Analysis  
+- - Step 1.
 
 ```mermaid
 graph LR;
@@ -46,7 +47,7 @@ graph LR;
     3-->6
 ```
 
-- Step 2.
+- - Step 2.
 
 ```mermaid
 graph LR;
@@ -58,7 +59,7 @@ graph LR;
     3-->6
 ```
 
-- Step 3.
+- - Step 3.
 
 ```mermaid
 graph LR;
@@ -70,7 +71,7 @@ graph LR;
     3-->6
 ```
 
-- Step 4.
+- - Step 4.
 
 ```mermaid
 graph LR;
@@ -81,7 +82,7 @@ graph LR;
     3-->6
 ```
 
-- Step 5.
+- - Step 5.
 
 ```mermaid
 graph LR;
@@ -93,7 +94,7 @@ graph LR;
     3-->6
 ```
 
-- Step 6.
+- - Step 6.
 
 ```mermaid
 graph LR;
@@ -105,7 +106,7 @@ graph LR;
     9-->6
 ```
 
-- Step 7.
+- - Step 7.
 
 ```mermaid
 graph LR;
@@ -117,7 +118,7 @@ graph LR;
     9-->6
 ```
 
-- Step 8.
+- - Step 8.
 
 ```mermaid
 graph LR;
@@ -128,7 +129,7 @@ graph LR;
     9-->6
 ```
 
-- Step 9.
+- - Step 9.
 
 ```mermaid
 graph LR;
@@ -140,7 +141,7 @@ graph LR;
     6-->9
 ```
 
-- Step 10.
+- - Step 10.
 
 ```mermaid
 graph LR;
@@ -152,7 +153,7 @@ graph LR;
     6-->9
 ```
 
-- Step 11.
+- - Step 11.
 
 ```mermaid
 graph LR;
@@ -161,12 +162,6 @@ graph LR;
     4-->6
     6-->8
     8-->9
-```
-
-- ***Run command***  
-
-```sh
-python insertion_sort.py
 ```
 
 - ***Source Code***
@@ -186,7 +181,7 @@ def insertion_sort(p_array):
 print(insertion_sort(array_num))
 ```
 
-#### Runing time
+- Runing time
 
 - Depends on input(eg. already sorted some part)  
 - Depends on input size, elements size:
@@ -250,7 +245,7 @@ Merge sort A[1..n]
 
 - Analysis Key subroutine Merge
 
-- step 0
+- - step 1
 
 ```mermaid
 graph LR;
@@ -263,7 +258,7 @@ graph LR;
     11-->12
 ```
 
-- step 1
+- - step 1
 
 ```mermaid
 graph LR;
@@ -277,7 +272,7 @@ graph LR;
     1
 ```
 
-- step 2
+- - step 2
 
 ```mermaid
 graph LR;
@@ -290,7 +285,7 @@ graph LR;
     1-->2
 ```
 
-- step 3
+- - step 3
 
 ```mermaid
 graph LR;
@@ -303,7 +298,7 @@ graph LR;
     2-->7
 ```
 
-- step 4
+- - step 4
 
 ```mermaid
 graph LR;
@@ -316,7 +311,7 @@ graph LR;
     7-->9
 ```
 
-- step 5
+- - step 5
 
 ```mermaid
 graph LR;
@@ -330,7 +325,7 @@ graph LR;
     9-->11
 ```
 
-- step 6
+- - step 6
 
 ```mermaid
 graph LR;
@@ -343,7 +338,7 @@ graph LR;
     11-->12
 ```
 
-- step 7
+- - step 7
 
 ```mermaid
 graph LR;
@@ -358,10 +353,67 @@ graph LR;
 
 - Running time
   - $TimeMerge(n) = \Theta(n)$ on n total elements
-  - $TimeRecur=\begin{cases}\Theta(1) &n = 1\\2\Theta(n/2) + \Theta(n) &n > 1\end{cases}$
+  - $TimeRecur=\begin{cases}\Theta(1) &n = 1\\2T(n/2) + \Theta(n) &n > 1\end{cases}$
+  - Recrusion tree, $T(n) = 2T(n/2) + Cn$, constant $c>0$
 
-    - Recrusion tree, $T(n) = 2T(n/2) + cn$, $c>0$
-    - test
+    - Expression
+
+ ```mermaid
+graph TB;
+    root0(Cn)-->root1(Tn/2);
+    root0(Cn)-->root2(Tn/2);
+ ```
+
+ ```mermaid
+graph TB;
+    root0(Cn)-->root1(Cn/2);
+    root0(Cn)-->root2(Cn/2);
+    root1(Cn/2)-->root3(Tn/4);
+    root1(Cn/2)-->root4(Tn/4);
+    root2(Cn/2)-->root5(Tn/4);
+    root2(Cn/2)-->root6(Tn/4);
+ ```
+
+ ```mermaid
+graph TB;
+    root0(Cn)-->root1(Cn/2);
+    root0(Cn)-->root2(Cn/2);
+    root1(Cn/2)-->root3(Cn/4);
+    root1(Cn/2)-->root4(Cn/4);
+    root2(Cn/2)-->root5(Cn/4);
+    root2(Cn/2)-->root6(Cn/4);
+    root3(Cn/4)-->root7(...);
+    root3(Cn/4)-->root8(...);
+    root4(Cn/4)-->root9(...);
+    root4(Cn/4)-->root10(...);
+    root5(Cn/4)-->root11(...);
+    root5(Cn/4)-->root12(...);
+    root6(Cn/4)-->root13(...);
+    root6(Cn/4)-->root14(...);
+    root7(...)-->root15(Theta_1);
+    root7(...)-->root16(Theta_1);
+    root8(...)-->root17(Theta_1);
+    root8(...)-->root18(Theta_1);
+    root9(...)-->root19(Theta_1);
+    root9(...)-->root20(Theta_1);
+    root10(...)-->root21(Theta_1);
+    root10(...)-->root22(Theta_1);
+    root11(...)-->root23(Theta_1);
+    root11(...)-->root24(Theta_1);
+    root12(...)-->root25(Theta_1);
+    root12(...)-->root26(Theta_1);
+    root13(...)-->root27(Theta_1);
+    root13(...)-->root28(Theta_1);
+    root14(...)-->root29(Theta_1);
+    root14(...)-->root30(Theta_1);
+ ```
+
+- Analysis time complexity
+  - The depth of the tree: $\log_2(n)$
+  - Time complexity of every layer: $Cn$
+  - Time complexity of leaves, add leaves up: $\Theta(n)$, why $\Theta(n)$, not $n$
+  - The whole expression: $T(n) = \log_2(n)Cn + \Theta(n)$
+    - $T(n) = \Theta(n\log_2(n))$
 
 - ***source code***
 
