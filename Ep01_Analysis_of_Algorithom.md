@@ -164,7 +164,7 @@ graph LR;
     8-->9
 ```
 
-- ***Source Code*** [insertion_sort.py](src/insertion_sort.py "Insertion Sort source code")
+- ***Source Code*** [insertion_sort.py](src/python/insertion_sort.py "Insertion Sort source code")
 
 ```python
 array_num = [8, 2, 4, 9, 3, 6]
@@ -414,7 +414,7 @@ graph TB;
   - The whole expression: $T(n) = \log_2(n)Cn + \Theta(n)$
     - $T(n) = \Theta(n\log_2(n))$
 
-- ***source code*** [merge_sort.py](src/merge_sort.py "merge sort source code")
+- ***source code*** [merge_sort.py](src/python/merge_sort.py "merge sort source code")
 
 ```python
 Array = [6, 5, 3, 1, 8, 7, 2, 4]
