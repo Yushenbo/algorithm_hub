@@ -27,7 +27,7 @@ Insertion_Sort(A, n) //Sorts A[1..n]
     for j <- 2 to n
         do key <- A[j]
             i <- (j-1)
-            while i >= 0 and A[i] >= key
+            while i >= 1 and A[i] >= key
                 do A[i + 1] <-> A[i]
                     i <- (i - 1)
                     key = A[i+1]
@@ -172,7 +172,7 @@ def insertion_sort(p_array):
     for j in range(1, len(p_array) - 1):
         key = p_array[j]
         i = j - 1
-        while(i > 0 && p_array[i] > key):
+        while(i >= 0 && p_array[i] > key):
             p_array[i+1], p_array[i] = p_array[i], p_array[i+1]
             i = i - 1
             key = p_array[i + 1]
@@ -198,7 +198,7 @@ print(insertion_sort(array_num))
   - $T(n) =$ Expected time over all inputs of size n  
   - Nedd assumption of statistical distribution of inputs
 
-*Best case* (Bogus)
+- *Best case* (Bogus)
 
 - All eles sorted already
 
@@ -223,7 +223,7 @@ print(insertion_sort(array_num))
 #### Insetion sort analysis
 
 - Worst case: input reverse sorted
-  - $T(n) = \sum^{n}_{i = 1} \Theta(j) = \Theta(n^2)$(Arithmetic series)
+  - $T(n) = \sum^{n}_{i = 1} \Theta(i) = \Theta(n^2)$(Arithmetic series)
 - Is insertion sort fast
   - moderately fast for small n
   - Not at all for large n
