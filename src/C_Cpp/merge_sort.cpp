@@ -30,10 +30,16 @@ void merge(int arr[], int left, int mid, int right, int *temp)
     printf("i is: %d\n", i);
 
     memcpy(arr + left, temp + left, sizeof(int)*(right - left + 1));
+    for(int n = 0; n < 8; n++)
+    {
+        printf("%d\t", arr[n]);
+    }
+    printf("\n");
 
 }
 void mergeSort(int array[], int left, int right, int* temp)
 {
+    printf("left is %d\n", left);
     if (left < right)
     {
         printf("2. right is %d\n", right);
